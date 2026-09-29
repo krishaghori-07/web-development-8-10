@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>email compose</title>
+    </head>
+    <body>
+        <form action="success.html">
+            <table border="1" align="center" width="50%" cellpadding="10">
+                <tr>
+                    <th>Compose Email</th>
+                </tr>
+                <tr>
+                    <td bgcolor="#eeeee">Email</td>
+                </tr>
+                <tr>
+                    <td><input type="email" name="email" id="email" required/></td>
+                </tr>
+                <tr>
+                    <td bgcolor="#eeeee"> subject</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="subject" id="subject" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#eeeee">
+                        Attachment
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="Attachment" id="Attachment" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#eeeee">Address</td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="address" id="address" rows="5" cols="30" required/></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <button type="submit">send email</button>
+                        <button type="reset">clear all</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
