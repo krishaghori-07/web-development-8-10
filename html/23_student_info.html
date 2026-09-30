@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+            student registration form
+        </title>
+    </head>
+    <body>
+        <h1 align="center">student registration form</h1>
+        <form action="success.html">
+            <b>personal information</b>
+            <br>
+            <br>
+            <label>Fullname:</label>
+            <input type="text" name="name" id="name">
+            <br><br>
+            <label>Email:</label>
+            <input type="email" name="email" id="email">
+            <br><br>
+            <label>Password:</label>
+            <input type="password" name="password" id="password">
+            <br><br>
+            <label>dob:</label>
+            <input type="date" name="date">
+            <br><br>
+            <label>gender</label>
+            <br>
+            <input type="radio" name="gender" id="male">male
+            <br>
+            <input type="radio" name="gender" id="female">Female
+            <br>
+            <input type="radio" name="gender" id="transgender">transgender
+            <br>
+            <br>
+            <div>
+                <b>course information</b><br><br>
+                <label>select course:</label>
+                <select name="course">
+                    <option>select course</option>
+                    <option>html&css</option>
+                    <option>javacsript</option>
+                    <option>python</option>
+                    <option>react js</option>
+                </select>
+                <br>
+                <br>
+                <label>Skills:</label>
+                <br>
+                <input type="checkbox" name="skill">html
+                <br>
+                <input type="checkbox" name="skill">css
+                <br>
+                <input type="checkbox" name="skill">javacsript
+                <br>
+                <input type="checkbox" name="skill">python
+            </div>
+            <br>
+            <label>Address:</label>
+            <br>
+            <textarea name="address" rows="5" cols="40" placeholder="enter your address"></textarea>
+            <br>
+            <br>
+            <input type="submit" value="register">
+            <input type="reset" value="clear">
+        </form>
+    </body>
+</html>
