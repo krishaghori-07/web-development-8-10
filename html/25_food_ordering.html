@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>
+            online food ordering
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                food express
+            </h1>
+            <nav>
+                <a href="#home">home</a>
+                <a href="#menu">menu</a>
+                <a href="#order">order</a>
+                <a href="#contactus">contact</a>
+            </nav>
+        </header>
+        <hr>
+        <section id="home">
+            <h2>welcome to food express</h2>
+            <p>prder your favourite food online and enjoy delicious meals 
+                delivered directly to your home.
+            </p>
+        </section>
+        <hr>
+        <section id="menu">
+            <h2>our menu</h2>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>food</th>
+                    <th>category</th>
+                    <th>price</th>
+                    <th>available</th>
+                </tr>
+                <tr>
+                    <td>pizza</td>
+                    <td>italian</td>
+                    <td>299</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td>burger</td>
+                    <td>fastfood</td>
+                    <td>149</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td>paneer tikka</td>
+                    <td>north indian</td>
+                    <td>249</td>
+                    <td>Available</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section id="order">
+            <h2>place your order</h2>
+            <form>
+                <label>Name:</label>
+                <input type="text" required>
+                <br>
+                <br>
+                <label>mobile no:</label>
+                <input type="tel" required>
+                <br>
+                <br>
+                <label>select food</label>
+                <select>
+                    <option>select your food</option>
+                    <option>pizza</option>
+                    <option>burger</option>
+                    <option>paneer tikka</option>
+                </select>
+                <br><br>
+                <label>Quantity:</label>
+                <input type="number" min="1" max="20">
+                <br>
+                <br>
+                <label>delivery address:</label>
+                <textarea name="address" id="address" rows="5" cols="40"></textarea>
+                <br><br>
+                <label> payment:</label>
+                <input type="radio" name="payment">cash
+                <input type="radio" name="payment">UPI
+                <input type="radio" name="payment">card
+                <br><br>
+                <input type="submit" value="place order">
+            </form>
+        </section>
+        <hr>
+       <footer id="contactus">
+            <h3>contact us</h3>
+            <p>Email:foodexpress@gmail.com</p>
+            <p>phone:8989890987</p>
+       </footer> 
+    </body>
+</html>
