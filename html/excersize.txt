@@ -1,0 +1,7 @@
+1.make one vertical forgot password page.
+2.make one web page of change password.
+3.modify the 23_student_info.html.
+4.create your resume using all output related html tags.
+5.create one registration page like shadi.com.
+6.create a web page that will display 5 countries detail.display name,capital,presidant,population,gdp,per person income and placed to visit.
+7.create a table that will display country name,area,currency,president, name in table formate of 10 asian countries.
