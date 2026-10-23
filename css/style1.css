@@ -1,0 +1,30 @@
+.blue-circle{
+    height: 200px;
+    width:200px;
+    border-radius: 50%;
+    background-color: blue;
+    color:white;
+    font-size:36px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#one{
+    position:absolute;
+    top:0px;
+    right:0px;
+    border:5px double yellow;
+}
+#three{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+}
+#two
+{
+    position: absolute;
+    top:calc((100vh/2)-100px);
+    left:calc((100vw/2)-100px);
+
+}
