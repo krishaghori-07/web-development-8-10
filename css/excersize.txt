@@ -1,0 +1,22 @@
+1.create a web page with heading ,paragraph an d button.
+    -change text colors and background colors.
+    -use different fonts and font-sizes.
+    -add padding and margins.
+2.create three boxes containing a title,images and description
+    -add borderes and rounde corneres.
+    -apply shadows.
+    -Align the cards in one row.
+3.create four differnt buttons using css.
+    -hover effects.
+    -border-radius.
+    -Gradient backgrounds
+    -smooth transitions
+4.design a navbar with a logo ,home,about services,and contact
+    -use flexbox and hover effects to the links
+5.login form
+    -create login form with email ,password and login button.
+    -use box-shadow and gradient background.
+6.product cards
+    -create a shopping page with three products,prices and buy now button.
+    -Add image zoom on hover and use css grid.
+7.create a web page that chages its layou on mobile,tablet and desktop using @media.
