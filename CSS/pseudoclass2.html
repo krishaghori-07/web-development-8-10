@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        font-family: Arial;
+        background-color:lightyellow;
+        text-align:center;
+        font-size:35px;
+    }
+     input:focus{  /*This is psuedo class that apply styles to an input field when user clilks on it  */
+        background-color:rgb(238, 238, 238);
+        border:2px solid blue;
+        outline:none;
+    }
+     input:checked+label{ /*This are css selector used to style a <label> when its related checkbox or radio button is selected */
+        color:green;
+        font-weight:bold;
+    }
+    button:hover{
+        background-color:green;
+        color:white;
+        border-radius: 30%;
+    }
+    h2{
+        font-style: italic;
+        font-weight: bold;
+        color:darkred;
+    }
+    </style>
+</head>
+<body>
+    <h2>Student registrastion form</h2>
+    <form action="">
+        <input type="text" placeholder="Enter your name">
+        <br><br>
+        <input type="checkbox" id="html">
+        <label for="html">HTML</label>
+        <br><br>
+        <button type="button">Register</button>
+    </form>
+</body>
+</html>

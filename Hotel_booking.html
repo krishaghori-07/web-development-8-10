@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel booking systems</title>
+</head>
+<body>
+    <h1 align="center">Royal hotel</h1>
+    <hr>
+    <h2>
+        Rooms information
+    </h2>
+    <table border="1" cellpadding="10" cellspacing="5">
+        <tr>
+            <th>Room type</th>
+            <th>Capacity</th>
+            <th>Price/night</th>
+            <th>Facilies</th>
+        </tr>
+        <tr>
+            <td>Starndard</td>
+            <td>2 persons</td>
+            <td>2,500</td>
+            <td>Wifi,TV</td>
+        </tr>
+        <tr>
+            <td>Deluxe</td>
+            <td>3 persons</td>
+            <td>4,000</td>
+            <td>Wifi,TV</td>
+        </tr>
+        <tr>
+            <td>Suite</td>
+            <td>5 persons</td>
+            <td>7,500</td>
+            <td>Wifi,TV,AC,Breakfast</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>
+        Book your room
+    </h2>
+    <form>
+        <h2>Guest details</h2>
+        <lable>Full name:</lable>
+        <input type="text" reqired>
+        <br>
+        <br>
+        <label>Mobile no:</label>
+        <input type="tel" required>
+        <br><br>
+        <label>Check-in:</label>
+        <input type="date" required>
+        <br><br>
+        <label>Check-out:</label>
+        <input type="date" required>
+        <br><br>
+        <label>Adults:</label>
+        <input type="number" min="1" max="5">
+        <br><br>
+        <label>Childrens:</label>
+        <input type="number" min="0" max="3" required>
+        <br><br>
+        <h2>
+            Room selection
+        </h2>
+        <select>
+            <option>Select room</option>
+            <option>Starndard</option>
+            <option>Deluxe</option>
+            <option>Suite</option>
+
+        </select>
+        <h2>Additional services</h2>
+        <input type="checkbox">Breakfast<br>
+        <input type="checkbox">Airport pickup<br>
+        <input type="checkbox">Laundary<br>
+        <input type="checkbox">Extra bed<br><br>
+        <input type="submit" value="Book now">
+        <input type="reset" value="clear all"> 
+    </form>
+</body>
+</html>

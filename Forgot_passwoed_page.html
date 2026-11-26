@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Modern Account Recovery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="h-full bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 flex items-center justify-center p-4 sm:p-6 text-slate-100 selection:bg-indigo-500 selection:text-white">
+
+    <main class="w-full max-w-md mx-auto">
+        
+        <!-- Glassmorphism Card Container -->
+        <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800 shadow-2xl rounded-3xl p-8 sm:p-10 relative overflow-hidden transition-all duration-300">
+            
+            <!-- Decorative Background Glow -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Form State View (Default) -->
+            <div id="form-view" class="space-y-6">
+                
+                <!-- Header Icon & Title -->
+                <div class="text-center space-y-3">
+                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 shadow-inner mb-1">
+                        <i data-lucide="key-round" class="w-7 h-7"></i>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Forgot password?</h1>
+                    <p class="text-sm text-slate-400 max-w-xs mx-auto">
+                        No worries, we'll send you reset instructions to get you back into your account.
+                    </p>
+                </div>
+
+                <!-- Forgot Password Form -->
+                <form id="reset-form" class="space-y-4 pt-2" onsubmit="handleResetSubmit(event)">
+                    <div class="space-y-1.5">
+                        <label for="email" class="block text-xs font-medium uppercase tracking-wider text-slate-400">Email Address</label>
+                        <div class="relative rounded-xl shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                placeholder="name@example.com" 
+                                class="block w-full pl-11 pr-4 py-3 bg-slate-950/50 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                            >
+                        </div>
+                        <p id="error-message" class="text-xs text-rose-400 hidden pt-1 flex items-center gap-1">
+                            <i data-lucide="alert-circle" class="w-3.5 h-3.5 inline"></i> Please enter a valid email address.
+                        </p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="submit-btn"
+                        class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-medium rounded-xl shadow-lg shadow-indigo-500/25 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200 active:scale-[0.99] text-sm"
+                    >
+                        <span id="btn-text">Send Reset Instructions</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Feedback View (Hidden by Default) -->
+            <div id="success-view" class="hidden text-center space-y-6 animate-fade-in py-2">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shadow-inner mb-1">
+                    <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                </div>
+                
+                <div class="space-y-2">
+                    <h2 class="text-2xl font-bold tracking-tight text-white">Check your email</h2>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-xs mx-auto">
+                        We have sent a secure password recovery link to <span id="sent-email-display" class="font-medium text-slate-200"></span>.
+                    </p>
+                </div>
+
+                <div class="bg-slate-950/40 border border-slate-800/80 rounded-2xl p-4 text-xs text-slate-400 space-y-1">
+                    <p class="font-medium text-slate-300">Didn't receive the email?</p>
+                    <p>Be sure to check your spam folder or try again with a different address.</p>
+                </div>
+
+                <button 
+                    type="button" 
+                    onclick="resetFormState()"
+                    class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-xl border border-slate-700/50 transition-all text-sm"
+                >
+                    Resend or Try Another Email
+                </button>
+            </div>
+
+            <!-- Back to Sign In Link -->
+            <div class="mt-8 pt-6 border-t border-slate-800/80 text-center">
+                <a href="#" onclick="handleBackClick(event)" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Back to Sign In
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        function handleResetSubmit(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const errorMsg = document.getElementById('error-message');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            
+            const emailVal = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailVal)) {
+                errorMsg.classList.remove('hidden');
+                emailInput.classList.add('border-rose-500', 'focus:ring-rose-500');
+                return;
+            }
+
+            // Clear errors
+            errorMsg.classList.add('hidden');
+            emailInput.classList.remove('border-rose-500', 'focus:ring-rose-500');
+
+            // Set loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            btnText.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                >
+                Sending instructions...
+            `;
+
+            // Simulate server network latency
+            setTimeout(() => {
+                document.getElementById('sent-email-display').textContent = emailVal;
+                document.getElementById('form-view').classList.add('hidden');
+                document.getElementById('success-view').classList.remove('hidden');
+                
+                // Reset button state for future interactions
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                btnText.textContent = 'Send Reset Instructions';
+                
+                // Re-initialize icons for the success view
+                lucide.createIcons();
+            }, 1000);
+        }
+
+        function resetFormState() {
+            document.getElementById('success-view').classList.add('hidden');
+            document.getElementById('form-view').classList.remove('hidden');
+            document.getElementById('email').value = '';
+            lucide.createIcons();
+        }
+
+        function handleBackClick(event) {
+            event.preventDefault();
+            // Custom friendly notification or redirection fallback
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="text-indigo-400">Redirecting to login...</span>`;
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                lucide.createIcons();
+            }, 800);
+        }
+    </script>
+</body>
+</html>
